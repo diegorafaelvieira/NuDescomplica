@@ -3,6 +3,10 @@
 <p align="justify">
 Competências: Design thinking · UX · Metodologias Ágeis · HTML · CSS · Bootstrap · JavaScript · React
 </p>
+  
+<p float="left" align="center">
+  <img height="200" src="https://github.com/diegorafaelvieira/NuDescomplica/assets/31875207/c839eae2-7c32-4256-bf57-95d15cf19354">
+</p> 
 
   
 ## Projeto Viagem dos Sonhos
