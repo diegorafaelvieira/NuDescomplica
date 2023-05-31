@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elemento DOM exemplo 3</title>
+</head>
+<body>
+  <button onclick="confirma()">
+    Excluir Item
+  </button>
+</body>
+<script>
+  function confirma() {
+    let confirmacao = confirm("Você deseja excluir esse item?")
+    if(confirmacao){
+      alert("Você irá excluir o item")
+    }else{
+      alert("Operação foi cancelada")
+    }
+  }
+</script>
+</html>
