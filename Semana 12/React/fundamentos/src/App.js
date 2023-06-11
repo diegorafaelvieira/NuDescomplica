@@ -1,5 +1,7 @@
 import Voos from "./Voos";
 import React from "react";
+import { AssentosOnibus } from "./AssentosOnibus";
+import { ViaCep } from "./ViaCep";
 
 const Titulo = () => (
   <h1>
@@ -81,6 +83,8 @@ function App() {
   return (
     <div className="App">
       <Titulo />
+      <ViaCep />
+      <AssentosOnibus />
       <MeuBotao label={`${labelBotao} !!!`} idade={30} />
       <Voos />
       <Lista />
