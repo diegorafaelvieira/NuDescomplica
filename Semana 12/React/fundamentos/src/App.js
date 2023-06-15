@@ -1,14 +1,16 @@
 import Voos from "./Voos";
-import React from "react";
+import React, { createContext, useState, useContext } from "react";
 import { AssentosOnibus } from "./AssentosOnibus";
 import { ViaCep } from "./ViaCep";
+import { RenderProps } from "./RenderProps";
+import { Fonts } from "./Fonts";
 
 const Titulo = () => (
-  <h1>
+  <h2>
     <span>Olá, </span>
     <strong>mundo2</strong>
     !!!
-  </h1>
+  </h2>
 );
 
 class MeuBotao extends React.Component {
@@ -18,7 +20,7 @@ class MeuBotao extends React.Component {
   // };
 
   imprime() {
-    console.log('Imprime aqui')
+    console.log("Imprime aqui");
   }
 
   handleClick(e) {
@@ -29,8 +31,15 @@ class MeuBotao extends React.Component {
 
   render() {
     return (
-      <a onClick={(e) => {this.handleClick(e) }} href="https://descomplica.com.br">{this.props.label} - {this.props.idade}</a>
-    )
+      <a
+        onClick={(e) => {
+          this.handleClick(e);
+        }}
+        href="https://descomplica.com.br"
+      >
+        {this.props.label} - {this.props.idade}
+      </a>
+    );
   }
 }
 
@@ -77,25 +86,38 @@ const Lista = () => {
   );
 };
 
-function App() {
-  const labelBotao = "Entre aqui";
+export const ThemeContext = createContext({});
 
+export const useThemeContext = () => useContext(ThemeContext);
+
+const SettingsContext = createContext({});
+export const useSettingsContext = () => useContext(SettingsContext);
+
+function App() {
+  const [font, setFont] = useState("arial");
+  const labelBotao = "Entre aqui";
   return (
-    <div className="App">
-      <Titulo />
-      <ViaCep />
-      <AssentosOnibus />
-      <MeuBotao label={`${labelBotao} !!!`} idade={30} />
-      <Voos />
-      <Lista />
-      <Pessoa idade={19} />
-      <Pessoa idade={14} />
-      <Pessoa idade={9} />
-      <article>
-        <h2>Subtítulo</h2>
-        <p>Parágrafo</p>
-      </article>
-    </div>
+    <SettingsContext.Provider value={{cepUrlBase: 'https://viacep.com.br'}}>
+      <ThemeContext.Provider value={{ color: "blue", font, setFont }}>
+        <div className="App">
+          <Titulo />
+          <RenderProps />
+          <Fonts />
+          <ViaCep />
+          <AssentosOnibus />
+          <MeuBotao label={`${labelBotao} !!!`} idade={30} />
+          <Voos />
+          {/* <Lista />
+        <Pessoa idade={19} />
+        <Pessoa idade={14} />
+        <Pessoa idade={9} />
+        <article>
+          <h2>Subtítulo</h2>
+          <p>Parágrafo</p>
+        </article> */}
+        </div>
+      </ThemeContext.Provider>
+    </SettingsContext.Provider>
   );
 }
 

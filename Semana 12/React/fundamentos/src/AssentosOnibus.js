@@ -1,33 +1,40 @@
 import React, { useState, useEffect } from "react";
+import { useThemeContext } from "./App";
 
 const Assento = (props) => {
   const [disabled, setDisable] = useState(false);
-
   const handleClick = () => {
     setDisable(true);
-  }
+  };
 
   useEffect(() => {
-    console.log('Nasceu');
+    console.log("Nasceu");
   }, []);
 
   useEffect(() => {
-    if(disabled) {
-      console.log('Disable alterou para ',disabled);
+    if (disabled) {
+      console.log("Disable alterou para ", disabled);
     }
-    
   }, [disabled]);
 
-    return (
-      <button
-        className="assento"
-        type="button"
-        disabled={disabled}
-        onClick={() => handleClick()}
-      >
-        {disabled ? "X" : props.pos}
-      </button>
-    );
+  const value = useThemeContext();
+
+  return (
+    <button
+      className="assento"
+      type="button"
+      disabled={disabled}
+      onClick={() => handleClick()}
+    >
+      {disabled ? (
+        "X"
+      ) : (
+        <span style={{ color: value.color, fontFamily: value.font }}>
+          {props.pos}
+        </span>
+      )}
+    </button>
+  );
 };
 
 const Fileira = (props) => {

@@ -1,3 +1,5 @@
+import { useThemeContext } from "./App";
+
 const voosDisponiveis = [
   {
     id: "123",
@@ -47,24 +49,28 @@ const voosDisponiveis = [
 ];
 
 function ItemVooDetails({ details }) {
+  const value = useThemeContext();
   return (
     <ul>
       {details.map((detail) => (
-        <li key={detail.id}>{detail.title}</li>
+        <li
+          key={detail.id}
+          style={{ color: value.color, fontFamily: value.font }}
+        >
+          {detail.title}
+        </li>
       ))}
     </ul>
   );
 }
 
-function ItemVoo({title, children}) {
+function ItemVoo({ title, children }) {
   return (
     <div className="voo">
       <header>
         <h3>{title}</h3>
       </header>
-      <div className="voo-details">
-        {children}
-      </div>
+      <div className="voo-details">{children}</div>
     </div>
   );
 }
