@@ -4,6 +4,7 @@ import { AssentosOnibus } from "./AssentosOnibus";
 import { ViaCep } from "./ViaCep";
 import { RenderProps } from "./RenderProps";
 import { Fonts } from "./Fonts";
+import { Formulario } from "./Formulario";
 
 const Titulo = () => (
   <h2>
@@ -101,6 +102,7 @@ function App() {
       <ThemeContext.Provider value={{ color: "blue", font, setFont }}>
         <div className="App">
           <Titulo />
+          <Formulario />
           <RenderProps />
           <Fonts />
           <ViaCep />
