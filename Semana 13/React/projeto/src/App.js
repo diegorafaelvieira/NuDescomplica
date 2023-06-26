@@ -2,20 +2,19 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HeaderPartial } from "./partials/HeaderPartial/HeaderPartial";
 import { HomePage } from "./pages/Home/HomePage";
 import { MinhasPastas } from "./pages/MinhasPastas/MinhasPastasPage";
-
-import { saveFolder, savePinInFolder } from './services/pinService';
+import { AppContext } from "./store/AppContext";
 
 function App() {
-  //saveFolder('JavaScript');
-  savePinInFolder("669c-15bf6", "pin123");
   return (
     <BrowserRouter>
       <div className="App">
-        <HeaderPartial />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/minhas-pastas" element={<MinhasPastas />} />
-        </Routes>
+        <AppContext>
+          <HeaderPartial />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/minhas-pastas" element={<MinhasPastas />} />
+          </Routes>
+        </AppContext>
       </div>
     </BrowserRouter>
   );
