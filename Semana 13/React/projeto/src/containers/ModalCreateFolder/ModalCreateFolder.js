@@ -2,7 +2,7 @@ import  { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import { Modal } from "../../components/Modal/Modal";
 
-export const ModalCreateFolder = ({ open }) => {
+export const ModalCreateFolderContainer = ({ open }) => {
   const [ folderName, setFolderName ] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();

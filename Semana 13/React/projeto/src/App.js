@@ -4,11 +4,18 @@ import { HomePage } from "./pages/Home/HomePage";
 import { MinhasPastas } from "./pages/MinhasPastas/MinhasPastasPage";
 import { AppContext } from "./store/AppContext";
 
+const initialState = {
+  activePinId: null,
+  mode: null,
+  folders: [],
+  type: null,
+};
+
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <AppContext>
+        <AppContext initialState={initialState}>
           <HeaderPartial />
           <Routes>
             <Route path="/" element={<HomePage />} />

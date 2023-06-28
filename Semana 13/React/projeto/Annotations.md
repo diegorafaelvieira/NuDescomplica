@@ -22,9 +22,9 @@
 ### Estado global
 ```
 {
-  folders:[{}, {}],
-  activePin: "",
-  modal: "salvePin" | "createFolder"
+  folders:[],
+  activePinId: "",
+  mode: "salvePin" | "createFolder"
+  type: null
 }
-
 ```
