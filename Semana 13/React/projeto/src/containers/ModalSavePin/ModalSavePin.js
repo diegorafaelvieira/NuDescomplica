@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -6,10 +6,16 @@ import { Modal } from "../../components/Modal/Modal";
 import { Button } from "../../components/Button/Button";
 import { useAppContext } from "../../store/AppContext";
 import { closeModalsAction } from "../../store/actions";
-import { fetchFoldersAction, openModalCreateFolder } from "../../store/actions";
+import { 
+  fetchFoldersAction,
+  openModalCreateFolder,
+  savePinInFolderAction,
+} from "../../store/actions";
 
 export const ModalSavePinContainer = ({ open }) => {
   const { state, dispatch } = useAppContext();
+  const [ itensLoading, setItensLoading ] = useState({});
+
   const handleClose = () => {
     console.log("fechando!!");
     dispatch(closeModalsAction());
@@ -20,13 +26,35 @@ export const ModalSavePinContainer = ({ open }) => {
     dispatch(openModalCreateFolder());
   };
 
+  const handleCLick = async (folderId) => {
+    //Loading true
+    setItensLoading((prevState) => {
+      return {
+        ...prevState,
+        [folderId]: true
+      }
+    });
+
+    await savePinInFolderAction(dispatch, state.activePinId, folderId);
+    //Loading false
+    setItensLoading((prevState) => {
+      return {
+        ...prevState,
+        [folderId]: false
+      }
+    });
+  };
+
+  const foldersNormalized = state.folders.map(folder => {
+    return ({
+      ...folder,
+      saved: folder.pins.includes(state.activePinId)
+    })
+  })
+
   useEffect(() => {
     fetchFoldersAction(dispatch);
   }, []);
-
-  useEffect(() => {
-    console.log(state);
-  }, [state])
 
   return (
     <Modal
@@ -44,12 +72,19 @@ export const ModalSavePinContainer = ({ open }) => {
       ]}
     >
       <ListGroup variant="flush">
-        {state.folders.map((folder, folderIndex) => (
+        {foldersNormalized.map((folder, folderIndex) => (
           <ListGroup.Item key={folderIndex}>
             <Row>
               <Col xs={8}>{folder.name}</Col>
               <Col xs={4} className="text-end">
-                <Button label="Salvar" loadingLabel="Salvando" />
+                <Button
+                  label={folder.saved ? 'Salvo' : 'Salvar'}
+                  loadingLabel="Salvando"
+                  onClick={() => handleCLick(folder.id)}
+                  variant={folder.saved ? 'secondary' : 'primary'}
+                  disabled={folder.saved}
+                  loading={itensLoading[folder.id]}
+                />
               </Col>
             </Row>
           </ListGroup.Item>
