@@ -39,7 +39,7 @@ Competências: Design thinking · UX · Metodologias Ágeis · HTML · CSS · Bo
 
 
 
-## Projeto DescoPin
+## Projeto DescomPin
 <p align="justify">Projeto desenvolvido no módulo de React.</p>
 
 <div align="center">
