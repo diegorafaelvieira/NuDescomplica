@@ -18,7 +18,7 @@ Competências: Design thinking · UX · Metodologias Ágeis · HTML · CSS · Bo
 </div>
   
 <p align="center">
-  <a align="center" href="https://nu-descomplica-coral.vercel.app/" target="_blank"> <br>Link Projeto</a>
+  <a align="center" href="https://64c5d2781ec6cc43e9a5318b--gleaming-sable-c3f7ac.netlify.app/" target="_blank"> <br>Link Projeto</a>
 </p>
 
 
@@ -34,7 +34,7 @@ Competências: Design thinking · UX · Metodologias Ágeis · HTML · CSS · Bo
 </div>
   
 <p align="center">
-  <a align="center" href="https://carrinho-de-compras-five.vercel.app/" target="_blank"> <br>Link Projeto</a>
+  <a align="center" href="https://64c5d2ce457ce74481868c80--benevolent-cascaron-725c9b.netlify.app/" target="_blank"> <br>Link Projeto</a>
 </p>
 
 
