@@ -54,6 +54,31 @@ Competências: Design thinking · UX · Metodologias Ágeis · HTML · CSS · Bo
   <a align="center" href="https://descompin-psi.vercel.app/" target="_blank"> <br>Link Projeto</a>
 </p>
   
-  
 
+## Projeto DescoFood
+<p align="justify">Projeto desenvolvido no módulo de HTML,CSS e Bootstrap.</p>
+
+<div align="center">
+  
+  ![DescoFood](https://github.com/diegorafaelvieira/NuDescomplica/assets/31875207/3e13c567-2700-45e7-8936-7f9d6e6bd17d) 
+</div>
+  
+<p align="center">
+  <a align="center" href="https://subtle-starlight-6e4456.netlify.app/" target="_blank"> <br>Link Projeto</a>  
+</p>
+
+
+## Projeto DescomPin
+<p align="justify">Projeto desenvolvido no módulo de React.</p>
+
+<div align="center">
+  
+  ![reactCarrinho](https://github.com/diegorafaelvieira/NuDescomplica/assets/31875207/37dc60ea-16c4-4c5b-a907-23650911026f)
+
+</div>
+  
+<p align="center">
+  <a align="center" href="https://nu-descomplica-black.vercel.app/" target="_blank"> <br>Link Projeto</a>
+</p>
+  
 
