@@ -1,0 +1,16 @@
+.carousel-caption h2 {
+  font-size: 35px;
+  color: #eaeef6;
+  text-shadow: 2px 2px 2px black;
+}
+
+#quemSomos {
+  color: #eaeef6;
+}
+
+#quemSomos h2, #quemSomos h4 {
+  text-shadow: 2px 2px 2px black;
+}
+
+
+
