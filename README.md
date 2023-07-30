@@ -68,7 +68,7 @@ Competências: Design thinking · UX · Metodologias Ágeis · HTML · CSS · Bo
 </p>
 
 
-## Projeto DescomPin
+## Projeto Carrinho de Compras
 <p align="justify">Projeto desenvolvido no módulo de React.</p>
 
 <div align="center">
